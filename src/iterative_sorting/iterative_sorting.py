@@ -13,20 +13,21 @@ def selection_sort(arr):
 
         # TO-DO: swap
         # Your code here
-    arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
+        arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
     return arr
 
 
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-    for i in range(length):
-        for j in range(length - i):
-            if(arr[j] > arr[j + 1]):
-                items = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = items
-
+    swaps_occurred = True
+    while swaps_occurred:
+        swaps_occurred = False
+        for i in range(0,len(arr)-1):
+            if(arr[i] > arr[i + 1]):
+                #swap
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                swaps_occured = True
     return arr
 
 
